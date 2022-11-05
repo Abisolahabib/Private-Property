@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Private Property</string>
+    <string name="background_onboard">background onboard</string>
+    <string name="welcome_home">Welcome Home</string>
+    <string name="get_started">Get Started</string>
+    <string name="sign_in_to_continue">Sign in to continue</string>
 </resources>
