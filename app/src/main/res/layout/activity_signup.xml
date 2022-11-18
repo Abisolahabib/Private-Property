@@ -48,7 +48,8 @@
                 android:id="@+id/firstname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="firstname">
+                android:hint="firstname"
+                android:layout_marginBottom="20dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -60,7 +61,8 @@
                 android:id="@+id/lastname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="lastname">
+                android:hint="lastname"
+                android:layout_marginBottom="20dp">
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
@@ -70,7 +72,8 @@
                     android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="email">
+                    android:hint="email"
+                    android:layout_marginBottom="20dp">
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
@@ -82,13 +85,16 @@
                 app:ccp_showNameCode="true"
                 app:ccp_showFullName="true"
                 android:background="#dadada"
+                android:layout_marginBottom="20dp"
                 />
 ,
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/phonenumber"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="phonenumber">
+                        android:hint="phonenumber"
+                        android:layout_marginBottom="20dp"
+                        android:src="@drawable/ic_baseline_phone_24">
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
@@ -97,7 +103,9 @@
                             android:id="@+id/createpassword"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="create password">
+                            android:hint="create password"
+                            app:endIconMode="password_toggle"
+                            android:layout_marginBottom="20dp">
 
                             <com.google.android.material.textfield.TextInputEditText
                                 android:layout_width="match_parent"
@@ -116,7 +124,22 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
                     android:elevation="0dp"
-                    android:text="Submit" />
+                    android:text="Submit"
+                    />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="have an account?"
+                android:textColor="@color/white"
+                android:layout_gravity="right"
+                android:textFontWeight="200"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="sign in"
+                android:layout_gravity="right"
+                android:textFontWeight="500"/>
 
 
 

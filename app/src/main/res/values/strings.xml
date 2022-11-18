@@ -5,4 +5,15 @@
     <string name="get_started">Get Started</string>
     <string name="sign_in_to_continue">Sign in to continue</string>
     <string name="toast_message">Password changed successfully</string>
+    <string name="otp_will_br_sent_shortly">OTP will br sent shortly</string>
+    <string name="enter_your_mobile_number">enter your mobile number</string>
+    <string name="_44">+44</string>
+    <string name="_0123456789">0123456789</string>
+    <string name="receive_otp">receive otp</string>
+    <string name="enter_the_otp_sent">Enter the OTP sent</string>
+    <string name="no_otp">No OTP</string>
+    <string name="no_otp_yet">No OTP yet</string>
+    <string name="please_resend_otp">please resend OTP</string>
+    <string name="_69359770">69359770</string>
+    <string name="verify">verify</string>
 </resources>
