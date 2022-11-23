@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "330381850005",
+    "project_id": "private-property-8ab09",
+    "storage_bucket": "private-property-8ab09.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:330381850005:android:7ec8f48e83173fca4b729c",
+        "android_client_info": {
+          "package_name": "uk.ac.tees.b1592041.privateproperty"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "330381850005-b3l4bqvbgu3cl8vv18g643i3jojr40hk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDi9fAzf2IVpI8GriWYZOJt6BqJ6QzB_oM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "330381850005-b3l4bqvbgu3cl8vv18g643i3jojr40hk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

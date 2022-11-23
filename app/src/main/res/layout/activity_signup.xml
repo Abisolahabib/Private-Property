@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,11 +7,10 @@
     android:background="#800000"
     android:orientation="vertical"
     android:padding="20dp"
+    android:scrollbars="none"
     tools:context=".SignupActivity">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#800000"
@@ -19,15 +18,27 @@
         android:padding="20dp"
         tools:context=".LoginActivity">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp">
+
+            <ImageView
+                android:id="@+id/back_button"
+                android:layout_width="30dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_baseline_arrow_back_24"
+                app:tint="@color/white" />
+        </LinearLayout>
 
         <ImageView
             android:id="@+id/logo_image"
-            android:layout_width="150dp"
-            android:layout_height="118dp"
+            android:layout_width="200dp"
+            android:layout_height="120dp"
             android:src="@drawable/pp_logo_white" />
 
         <TextView
-            android:id="@+id/logo_welcome"
+            android:id="@+id/signup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/baloo_tamma"
@@ -48,8 +59,8 @@
                 android:id="@+id/firstname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="firstname"
-                android:layout_marginBottom="20dp">
+                android:layout_marginBottom="20dp"
+                android:hint="firstname">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -61,90 +72,118 @@
                 android:id="@+id/lastname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="lastname"
-                android:layout_marginBottom="20dp">
+                android:layout_marginBottom="20dp"
+                android:hint="lastname">
+
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/email"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:hint="username">
+
+                <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="email"
-                    android:layout_marginBottom="20dp">
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-                </com.google.android.material.textfield.TextInputLayout>
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:hint="email">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+
             <com.hbb20.CountryCodePicker
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:ccp_autoDetectCountry="true"
-                app:ccp_showNameCode="true"
-                app:ccp_showFullName="true"
-                android:background="#dadada"
                 android:layout_marginBottom="20dp"
-                />
-,
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/phonenumber"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="phonenumber"
-                        android:layout_marginBottom="20dp"
-                        android:src="@drawable/ic_baseline_phone_24">
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
-                    </com.google.android.material.textfield.TextInputLayout>
-                        <com.google.android.material.textfield.TextInputLayout
-                            android:id="@+id/createpassword"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="create password"
-                            app:endIconMode="password_toggle"
-                            android:layout_marginBottom="20dp">
+                android:background="#dadada"
+                app:ccp_autoDetectCountry="true"
+                app:ccp_showFullName="true"
+                app:ccp_showNameCode="true" />
 
-                            <com.google.android.material.textfield.TextInputEditText
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/phonenumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:hint="phonenumber"
+                android:src="@drawable/ic_baseline_phone_24">
 
-                        </com.google.android.material.textfield.TextInputLayout>
-
-
-
-
-                <Button
-                    android:id="@+id/Submit"
+                <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:elevation="0dp"
-                    android:text="Submit"
-                    />
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/createpassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:hint="create password"
+                app:endIconMode="password_toggle">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/confirmpassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:hint="confirmpassword"
+                app:endIconMode="password_toggle">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/Submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:elevation="0dp"
+                android:text="Submit" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="right"
                 android:text="have an account?"
                 android:textColor="@color/white"
-                android:layout_gravity="right"
-                android:textFontWeight="200"/>
+                android:textFontWeight="200" />
+
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="right"
                 android:layout_marginLeft="15dp"
                 android:text="sign in"
-                android:layout_gravity="right"
-                android:textFontWeight="500"/>
-
-
+                android:textFontWeight="500" />
 
         </LinearLayout>
     </LinearLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
