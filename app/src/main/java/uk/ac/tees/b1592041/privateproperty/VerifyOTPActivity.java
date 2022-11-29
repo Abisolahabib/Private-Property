@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,12 +22,15 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.concurrent.TimeUnit;
 
 public class VerifyOTPActivity extends AppCompatActivity {
     //    ImageView backButton;
     String log_tag = VerifyOTPActivity.class.getSimpleName();
+    //    String firstname, lastname, username, phoneno, email, password, confirmpassword;
     private EditText code, code1, code2, code3, code4, code5;
     private String verificationId;
     private TextView resendOtp;
@@ -39,7 +43,15 @@ public class VerifyOTPActivity extends AppCompatActivity {
         resendOtp = findViewById(R.id.resend_otp);
         Intent intent = getIntent();
 
-        String number = intent.getStringExtra("phoneno");
+
+//        firstname = intent.getStringExtra("firstname");
+//        lastname = intent.getStringExtra("lastname");
+//        username = intent.getStringExtra("username");
+//        email = intent.getStringExtra("email");
+//        confirmpassword = intent.getStringExtra("confirmpassword");
+//        password = intent.getStringExtra("password");
+        String number = intent.getStringExtra("mobile");
+
         Log.d(log_tag, number);
         mobile.setText(number);
 
@@ -51,7 +63,8 @@ public class VerifyOTPActivity extends AppCompatActivity {
         code5 = findViewById(R.id.code5);
 
         setupOTPInputs();
-        verificationId = getIntent().getStringExtra("VerificationId");
+        final ProgressBar progressBar = findViewById(R.id.progressbar);
+        verificationId = intent.getStringExtra("VerificationId");
         final Button btnVerify = findViewById(R.id.otpbuttonverify);
 
         btnVerify.setOnClickListener(new View.OnClickListener() {
@@ -77,8 +90,8 @@ public class VerifyOTPActivity extends AppCompatActivity {
 
 
                 if (verificationId != null) {
-
-
+                    progressBar.setVisibility(View.VISIBLE);
+                    btnVerify.setVisibility(View.INVISIBLE);
                     PhoneAuthCredential phoneAuthCredential = PhoneAuthProvider.getCredential(
                             verificationId,
                             OTPcode
@@ -86,7 +99,11 @@ public class VerifyOTPActivity extends AppCompatActivity {
                     FirebaseAuth.getInstance().signInWithCredential(phoneAuthCredential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
+                            progressBar.setVisibility(View.VISIBLE);
+                            btnVerify.setVisibility(View.INVISIBLE);
                             if (task.isSuccessful()) {
+
+//                                storeNewUserData();
                                 Intent intent = new Intent(getApplicationContext(), ChangePasswordActivity.class);
                                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                 startActivity(intent);
@@ -101,7 +118,7 @@ public class VerifyOTPActivity extends AppCompatActivity {
                     resendOtp.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            PhoneAuthProvider.getInstance().verifyPhoneNumber(getIntent().getStringExtra("phoneno"), 60,// user should be able to get an new code in 60 seconds
+                            PhoneAuthProvider.getInstance().verifyPhoneNumber(getIntent().getStringExtra("mobile"), 60,// user should be able to get an new code in 60 seconds
                                     TimeUnit.SECONDS,
                                     VerifyOTPActivity.this,
                                     new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
@@ -130,6 +147,15 @@ public class VerifyOTPActivity extends AppCompatActivity {
                     });
                 }
 
+
+            }
+
+            private void storeNewUserData() {
+
+                FirebaseDatabase rootNode = FirebaseDatabase.getInstance();
+                DatabaseReference reference = rootNode.getReference("users");
+
+                reference.setValue("First record!");
 
             }
         });

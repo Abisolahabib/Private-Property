@@ -164,6 +164,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:elevation="0dp"
+                android:onClick="btnRegisterUser"
                 android:text="Submit" />
 
             <TextView

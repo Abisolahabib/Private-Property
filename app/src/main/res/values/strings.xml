@@ -16,4 +16,6 @@
     <string name="please_resend_otp">please resend OTP</string>
     <string name="_69359770">69359770</string>
     <string name="verify">verify</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

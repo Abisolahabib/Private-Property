@@ -1,36 +1,44 @@
 package uk.ac.tees.b1592041.privateproperty;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.regex.Pattern;
 
 public class SignupActivity extends AppCompatActivity {
-
 
     Button submit;
     ImageView backbutton;
     TextView titleText;
     TextInputLayout FirstName, LastName, Username, Email, Password, phonenumber,
             confirmpassword;
-
+    String TAG = SignupActivity.class.getSimpleName();
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_signup);
 
+        mAuth = FirebaseAuth.getInstance();
 
-        submit = findViewById(R.id.Submit);
         titleText = findViewById(R.id.signup);
         backbutton = findViewById(R.id.back_button);
 
@@ -50,6 +58,7 @@ public class SignupActivity extends AppCompatActivity {
             }
         });
     }
+
 
     private Boolean validateFirstName() {
         String val = FirstName.getEditText().getText().toString();
@@ -99,7 +108,7 @@ public class SignupActivity extends AppCompatActivity {
 
     private Boolean validateEmail() {
 
-        String val = Email.getEditText().getText().toString();
+        String val = Email.getEditText().getText().toString().trim();
         String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
         if (val.isEmpty()) {
@@ -153,11 +162,53 @@ public class SignupActivity extends AppCompatActivity {
     }
 
     public void btnRegisterUser(View view) {
+        if (!validateFirstName() || !validateLastName() || !validateUsername() || !validateEmail() || !validatePassword() || !validatecomfirmpassword()) {
+            return;
+        } else {
 
 
+            String userEmail = Email.getEditText().getText().toString().trim();
+            String userPwd = Password.getEditText().getText().toString().trim();
+            Log.d(TAG, userEmail);
+            mAuth.createUserWithEmailAndPassword(userEmail, userPwd).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
+                        // Sign in success, update UI with the signed-in user's information
+
+                        Log.d(TAG, "createUserWithEmail:success");
+                        FirebaseUser user = mAuth.getCurrentUser();
+                        updateUI(user);
+                        Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+                        startActivity(intent);
+                    } else {
+                        // If sign in fails, display a message to the user.
+                        Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                        Toast.makeText(SignupActivity.this, "Authentication failed." + task.getException().getMessage(),
+                                Toast.LENGTH_SHORT).show();
+                        updateUI(null);
+                    }
+                }
+            });
+        }
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+//        check to see if the user is already signed
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser != null) {
+            reload();
+        }
+    }
 
+    private void reload() {
+    }
+
+    private void updateUI(FirebaseUser user) {
+
+    }
 }
 
 
