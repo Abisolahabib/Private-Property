@@ -37,8 +37,12 @@ dependencies {
     implementation 'com.google.android.material:compose-theme-adapter:1.0.0'
     implementation 'com.google.firebase:firebase-auth:21.1.0'
     implementation 'com.google.firebase:firebase-database:20.1.0'
+    implementation 'com.squareup.picasso:picasso:2.8'
+
+
     implementation 'com.google.android.gms:play-services-maps:18.0.2'
     implementation 'com.karumi:dexter:6.2.3'
+    implementation 'com.google.firebase:firebase-firestore:24.4.1'
     //implementation 'com.google.firebase:firebase-auth:21.0.2'
 
     testImplementation 'junit:junit:4.13.2'
@@ -46,10 +50,18 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation 'io.github.chaosleung:pinview:1.4.4'
     implementation 'com.hbb20:ccp:2.5.0'
+//    implementation 'com.takisoft.fix.preference-v7:25.3.0.0'
 //    implementation 'com.google.privateproperty.privateproperty-auth:19.3.2'
     // Import the BoM for the Firebase platform
     implementation platform('com.google.firebase:firebase-bom:31.1.0')
 //    // Add the dependency for the Firebase Authentication library
 //    // When using the BoM, you don't specify versions in Firebase library dependencies
     implementation 'com.google.firebase:firebase-auth'
+
+
+    implementation 'com.google.firebase:firebase-firestore:24.4.0'
+    implementation 'com.firebaseui:firebase-ui-firestore:8.0.0'
+    implementation 'com.google.firebase:firebase-storage:20.1.0'
+
+
 }

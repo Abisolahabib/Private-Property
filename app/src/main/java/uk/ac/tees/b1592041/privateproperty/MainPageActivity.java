@@ -1,5 +1,6 @@
 package uk.ac.tees.b1592041.privateproperty;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -16,6 +17,7 @@ public class MainPageActivity extends AppCompatActivity {
     SettingsFragment settingsFragment = new SettingsFragment();
     NotificationFragment notificationFragment = new NotificationFragment();
     SearchFragment searchFragment = new SearchFragment();
+    ProfileFragment profileFragment = new ProfileFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,9 @@ public class MainPageActivity extends AppCompatActivity {
 
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            Intent intent = new Intent(MainPageActivity.this, SettingsActivity.class);
+
+
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
@@ -40,14 +45,19 @@ public class MainPageActivity extends AppCompatActivity {
                         getSupportFragmentManager().beginTransaction().replace(com.google.android.material.composethemeadapter.R.id.container, notificationFragment).commit();
                         return true;
                     case R.id.Settings:
-                        getSupportFragmentManager().beginTransaction().replace(com.google.android.material.composethemeadapter.R.id.container, settingsFragment).commit();
+//                        getSupportFragmentManager().beginTransaction().replace(com.google.android.material.composethemeadapter.R.id.container, settingsFragment).commit();
+
                         return true;
                     case R.id.Search:
                         getSupportFragmentManager().beginTransaction().replace(com.google.android.material.composethemeadapter.R.id.container, searchFragment).commit();
                         return true;
+                    case R.id.Profilefrag:
+                        getSupportFragmentManager().beginTransaction().replace(com.google.android.material.composethemeadapter.R.id.container, profileFragment).commit();
+                        return true;
                 }
                 return false;
             }
+
         });
     }
 }

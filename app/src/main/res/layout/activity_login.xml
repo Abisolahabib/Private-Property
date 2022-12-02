@@ -59,10 +59,10 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/username"
+            android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Username">
+            android:hint="email">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -96,7 +96,8 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:elevation="0dp"
-                android:text="Login" />
+                android:onClick="login"
+                android:text="Sign in" />
 
             <Button
                 android:id="@+id/sign_up"

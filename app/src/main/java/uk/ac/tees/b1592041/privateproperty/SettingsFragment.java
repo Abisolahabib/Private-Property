@@ -1,20 +1,22 @@
 package uk.ac.tees.b1592041.privateproperty;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-import androidx.fragment.app.Fragment;
 
 
-public class SettingsFragment extends Fragment {
-
-
+public class SettingsFragment extends PreferenceFragmentCompat {
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_settings, container, false);
+    public void onCreate(Bundle savedInstanceState) {
+
     }
+
+//    @Override
+//    public Fragment onCreate(Bundle savedInstanceState, ViewGroup container, LayoutInflater inflater) {
+//        View fview = inflater.inflate(R.layout.fragment_home, container, false);
+//
+//        return fview;
+//    }
+//
+//
+//
+//
 }

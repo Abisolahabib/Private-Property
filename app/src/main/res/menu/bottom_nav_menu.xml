@@ -4,7 +4,7 @@
         android:title="Home"
     android:icon="@drawable/ic_baseline_home_24"/>
     <item android:id="@+id/Notification"
-        android:title="Notification"
+        android:title="Latest Houses"
         android:icon="@drawable/ic_baseline_notifications_24"/>
     <item android:id="@+id/Settings"
         android:title="Settings"
@@ -12,4 +12,7 @@
     <item android:id="@+id/Search"
         android:title="Search"
         android:icon="@drawable/ic_baseline_search_24"/>
+    <item android:id="@+id/Profilefrag"
+        android:title="Profile"
+        android:icon="@drawable/ic_baseline_person_24"/>
 </menu>
