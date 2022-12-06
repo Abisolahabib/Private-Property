@@ -1,22 +1,21 @@
 package uk.ac.tees.b1592041.privateproperty;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
-public class SettingsFragment extends PreferenceFragmentCompat {
+public class SettingsFragment extends Fragment {
+
+    @Nullable
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_settings, container, false);
 
+        return view;
     }
-
-//    @Override
-//    public Fragment onCreate(Bundle savedInstanceState, ViewGroup container, LayoutInflater inflater) {
-//        View fview = inflater.inflate(R.layout.fragment_home, container, false);
-//
-//        return fview;
-//    }
-//
-//
-//
-//
 }

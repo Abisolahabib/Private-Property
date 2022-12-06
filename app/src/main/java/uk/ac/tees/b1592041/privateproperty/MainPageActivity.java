@@ -3,6 +3,8 @@ package uk.ac.tees.b1592041.privateproperty;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +26,8 @@ public class MainPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
         bottomNavigationView = findViewById(R.id.bottom_navigation);
+
+        ImageView logoutBtn = findViewById(R.id.logout);
 
         getSupportFragmentManager().beginTransaction().replace(com.google.android.material.composethemeadapter.R.id.container, homeFragment).commit();
         BadgeDrawable badgeDrawable = bottomNavigationView.getOrCreateBadge(R.id.Notification);
@@ -59,5 +63,17 @@ public class MainPageActivity extends AppCompatActivity {
             }
 
         });
+
+        logoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainPageActivity.this, LoginActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+
+            }
+        });
     }
+
+
 }

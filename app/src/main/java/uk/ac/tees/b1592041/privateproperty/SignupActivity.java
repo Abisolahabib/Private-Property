@@ -26,7 +26,7 @@ import java.util.regex.Pattern;
 public class SignupActivity extends AppCompatActivity {
 
     Button submit;
-    ImageView backbutton;
+    ImageView back_button;
     TextView titleText;
     TextInputLayout FirstName, LastName, Username, Email, Password, phonenumber,
             confirmpassword;
@@ -39,10 +39,11 @@ public class SignupActivity extends AppCompatActivity {
 //        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_signup);
 
+
         mAuth = FirebaseAuth.getInstance();
 
         titleText = findViewById(R.id.signup);
-        backbutton = findViewById(R.id.back_button);
+        back_button = findViewById(R.id.back_button);
 
         FirstName = findViewById(R.id.firstname);
         LastName = findViewById(R.id.lastname);
@@ -53,7 +54,7 @@ public class SignupActivity extends AppCompatActivity {
         Username = findViewById(R.id.username);
 
 
-        backbutton.setOnClickListener(new View.OnClickListener() {
+        back_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onBackPressed();

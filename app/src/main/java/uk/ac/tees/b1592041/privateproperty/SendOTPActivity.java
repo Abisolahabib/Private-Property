@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -23,6 +24,7 @@ public class SendOTPActivity extends AppCompatActivity {
     String log_tag = SendOTPActivity.class.getSimpleName();
     private CountryCodePicker countryCodePicker;
     private TextInputLayout phoneNum;
+    private ImageView backBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,14 @@ public class SendOTPActivity extends AppCompatActivity {
         phoneNum = findViewById(R.id.phonenumber);
         Button otpbutton = findViewById(R.id.otpbutton);
 
+        backBtn = findViewById(R.id.go_back);
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
 
         otpbutton.setOnClickListener(new View.OnClickListener() {
             @Override

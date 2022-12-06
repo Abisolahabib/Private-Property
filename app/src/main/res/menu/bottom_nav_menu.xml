@@ -10,8 +10,8 @@
         android:title="Settings"
         android:icon="@drawable/ic_baseline_settings_24"/>
     <item android:id="@+id/Search"
-        android:title="Search"
-        android:icon="@drawable/ic_baseline_search_24"/>
+        android:title="Calender"
+        android:icon="@drawable/ic_baseline_date_range_24"/>
     <item android:id="@+id/Profilefrag"
         android:title="Profile"
         android:icon="@drawable/ic_baseline_person_24"/>
