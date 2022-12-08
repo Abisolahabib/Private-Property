@@ -3,9 +3,9 @@
     <item android:id="@+id/Homepage"
         android:title="Home"
     android:icon="@drawable/ic_baseline_home_24"/>
-    <item android:id="@+id/Notification"
-        android:title="Latest Houses"
-        android:icon="@drawable/ic_baseline_notifications_24"/>
+    <item android:id="@+id/Map"
+        android:title="Map"
+        android:icon="@drawable/ic_baseline_map_24"/>
     <item android:id="@+id/Settings"
         android:title="Settings"
         android:icon="@drawable/ic_baseline_settings_24"/>

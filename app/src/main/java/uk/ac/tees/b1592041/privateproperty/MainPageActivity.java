@@ -30,7 +30,7 @@ public class MainPageActivity extends AppCompatActivity {
         ImageView logoutBtn = findViewById(R.id.logout);
 
         getSupportFragmentManager().beginTransaction().replace(com.google.android.material.composethemeadapter.R.id.container, homeFragment).commit();
-        BadgeDrawable badgeDrawable = bottomNavigationView.getOrCreateBadge(R.id.Notification);
+        BadgeDrawable badgeDrawable = bottomNavigationView.getOrCreateBadge(R.id.Map);
         badgeDrawable.setVisible(true);
         badgeDrawable.setNumber(8);
 
@@ -45,11 +45,11 @@ public class MainPageActivity extends AppCompatActivity {
                     case R.id.Homepage:
                         getSupportFragmentManager().beginTransaction().replace(com.google.android.material.composethemeadapter.R.id.container, homeFragment).commit();
                         return true;
-                    case R.id.Notification:
+                    case R.id.Map:
                         getSupportFragmentManager().beginTransaction().replace(com.google.android.material.composethemeadapter.R.id.container, notificationFragment).commit();
                         return true;
                     case R.id.Settings:
-//                        getSupportFragmentManager().beginTransaction().replace(com.google.android.material.composethemeadapter.R.id.container, settingsFragment).commit();
+                        getSupportFragmentManager().beginTransaction().replace(com.google.android.material.composethemeadapter.R.id.container, settingsFragment).commit();
 
                         return true;
                     case R.id.Search:

@@ -65,5 +65,10 @@ dependencies {
     implementation 'com.firebaseui:firebase-ui-firestore:8.0.0'
     implementation 'com.google.firebase:firebase-storage:20.1.0'
 
+// maps
+    implementation 'com.google.android.gms:play-services-maps:18.1.0'
+    implementation 'com.karumi:dexter:6.2.2'
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+
 
 }

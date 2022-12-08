@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,123 +7,79 @@
     tools:context=".SearchFragment">
 
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <fragment
+    <FrameLayout
         android:id="@+id/search_fragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:layout="@layout/support_simple_spinner_dropdown_item" />
 
-    <com.google.android.material.appbar.CollapsingToolbarLayout
+
+    <LinearLayout
+        android:id="@+id/calendar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
 
-        <LinearLayout
-            android:id="@+id/event_cardView"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/date_button"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:elevation="0dp"
-                app:cardCornerRadius="12dp">
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:text="Date"
+                android:textSize="20sp" />
 
-                <FrameLayout
-                    android:id="@+id/image"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-
-                    <ImageView
-                        android:id="@+id/banner"
-                        android:layout_width="match_parent"
-                        android:layout_height="20dp"
-                        android:background="@color/cardview_light_background"
-                        android:scaleType="centerCrop" />
-
-                    <TextView
-                        android:id="@+id/banner_date_time"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="Date and Time Picker for your vacation" />
-
-                </FrameLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp">
-
-                <Button
-                    android:id="@+id/date_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_gravity="center"
-                    android:text="Date"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/date_selected"
-                    style="@style/TextAppearance.MaterialComponents.Headline6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="20dp"
-                    android:layout_toRightOf="@id/date_button"
-                    android:text="Select a Date"
-                    android:textSize="20sp" />
+            <TextView
+                android:id="@+id/date_selected"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/date_button"
+                android:text="Select a Date"
+                android:textSize="20sp" />
 
 
-            </RelativeLayout>
+        </RelativeLayout>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
 
-                <Button
-                    android:id="@+id/time_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_gravity="center"
-                    android:text="Time"
-                    android:textSize="18sp" />
+            <Button
+                android:id="@+id/time_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:text="Time"
+                android:textSize="18sp" />
 
-                <TextView
-                    android:id="@+id/time_selected"
-                    style="@style/TextAppearance.MaterialComponents.Headline6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="13dp"
-                    android:layout_toRightOf="@id/time_button"
-                    android:text="Select a Time"
-                    android:textSize="20sp" />
-            </RelativeLayout>
-
-
-        </LinearLayout>
+            <TextView
+                android:id="@+id/time_selected"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="13dp"
+                android:layout_toRightOf="@id/time_button"
+                android:text="Select a Time"
+                android:textSize="20sp" />
+        </RelativeLayout>
 
 
-    </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
