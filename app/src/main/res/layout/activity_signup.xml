@@ -105,7 +105,12 @@
                 android:layout_marginBottom="20dp"
                 android:hint="email">
 
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
             </com.google.android.material.textfield.TextInputLayout>
+            
 
             <com.hbb20.CountryCodePicker
                 android:layout_width="match_parent"
