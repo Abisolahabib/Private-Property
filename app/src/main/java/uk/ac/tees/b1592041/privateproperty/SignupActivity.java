@@ -32,6 +32,7 @@ public class SignupActivity extends AppCompatActivity {
             confirmpassword;
     String TAG = SignupActivity.class.getSimpleName();
     private FirebaseAuth mAuth;
+    private Button signIn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,12 +53,22 @@ public class SignupActivity extends AppCompatActivity {
         Password = findViewById(R.id.createpassword);
         confirmpassword = findViewById(R.id.confirmpassword);
         Username = findViewById(R.id.username);
+        signIn = findViewById(R.id.sigin_up);
 
 
         back_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onBackPressed();
+            }
+        });
+
+        signIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
