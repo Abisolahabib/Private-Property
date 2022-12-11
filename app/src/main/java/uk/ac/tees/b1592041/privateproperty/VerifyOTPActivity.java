@@ -102,9 +102,9 @@ public class VerifyOTPActivity extends AppCompatActivity {
                             progressBar.setVisibility(View.VISIBLE);
                             btnVerify.setVisibility(View.INVISIBLE);
                             if (task.isSuccessful()) {
-
+                                Toast.makeText(VerifyOTPActivity.this, "User successfully created", Toast.LENGTH_SHORT).show();
 //                                storeNewUserData();
-                                Intent intent = new Intent(getApplicationContext(), ChangePasswordActivity.class);
+                                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                 startActivity(intent);
                             } else {

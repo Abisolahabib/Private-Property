@@ -190,6 +190,7 @@ public class SignupActivity extends AppCompatActivity {
             user.put("firstname", FirstName.getEditText().getText().toString().trim());
             user.put("lastname", LastName.getEditText().getText().toString().trim());
             user.put("username", Username.getEditText().getText().toString().trim());
+            user.put("password", Password.getEditText().getText().toString().trim());
             user.put("phonenumber", phonenumber.getEditText().getText().toString().trim());
             user.put("email", userEmail);
 
@@ -209,7 +210,7 @@ public class SignupActivity extends AppCompatActivity {
                                     Log.d(TAG, "createUserWithEmail:success");
                                     FirebaseUser user = mAuth.getCurrentUser();
                                     updateUI(user);
-                                    Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+                                    Intent intent = new Intent(SignupActivity.this, SendOTPActivity.class);
                                     startActivity(intent);
                                 });
                     } else {

@@ -20,13 +20,13 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
+    public static final String EXTRA_CONTENT = "privateproperty.LoginActivity";
     Button forgotPassword;
     Button signup;
     Button login;
     ImageView backButton;
     TextInputLayout email, password;
     FirebaseAuth mAuth;
-
     String TAG = LoginActivity.class.getSimpleName();
 
     @Override
@@ -73,7 +73,7 @@ public class LoginActivity extends AppCompatActivity {
         forgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, ForgotpasswordActivity.class);
+                Intent intent = new Intent(LoginActivity.this, ChangePasswordActivity.class);
                 startActivity(intent);
 
             }
@@ -100,7 +100,9 @@ public class LoginActivity extends AppCompatActivity {
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI(user);
 
+
                             Intent intent = new Intent(LoginActivity.this, MainPageActivity.class);
+                            intent.putExtra(EXTRA_CONTENT, userEmail);
                             startActivity(intent);
                             finish();
                         } else {

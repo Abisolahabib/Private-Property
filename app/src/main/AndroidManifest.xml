@@ -6,8 +6,6 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <!--    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />-->
-
 
     <application
         android:allowBackup="true"
@@ -19,6 +17,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PrivateProperty"
         tools:targetApi="31">
+        <activity
+            android:name=".BookActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".MapView"
             android:exported="false">
@@ -50,23 +55,15 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-        </activity>
-        <!--        <activity-->
-        <!--            android:name=".ProfileActivity"-->
-        <!--            android:exported="false">-->
-        <!--            <meta-data-->
-        <!--                android:name="android.app.lib_name"-->
-        <!--                android:value="" />-->
-        <!--        </activity>-->
+        </activity> <!-- <activity -->
+        <!-- android:name=".ProfileActivity" -->
+        <!-- android:exported="false"> -->
+        <!-- <meta-data -->
+        <!-- android:name="android.app.lib_name" -->
+        <!-- android:value="" /> -->
+        <!-- </activity> -->
         <activity
             android:name=".ChangePasswordActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".OnetimepasswordActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -117,7 +114,6 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCtbpvaJqlTf29XfZh798ZGiC4TZ7HUfD8" />
